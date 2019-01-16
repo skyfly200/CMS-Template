@@ -10,10 +10,10 @@
           <Content />
         </v-layout>
         <v-layout class="pa-2" align-center justify-left row fill-height>
-          <v-flex v-for="p in posts" :key="p.title" xs12 md6>
-            <Post class="post section ma-2" :frontmatter="p.frontmatter" :title="p.title" :path="p.path" feature="true" md12 >
-              <p> {{ p.frontmatter.description }} </p>
-            </Post>
+          <v-flex v-for="e in events" :key="e.title" xs12 md6>
+            <EventItem class="work section ma-2" feature="true" v-bind="e">
+              <p> {{ e.frontmatter.description }} </p>
+            </EventItem>
           </v-flex>
         </v-layout>
       </v-container>
@@ -21,19 +21,18 @@
   </div>
 </template>
 <script>
-import Nav from "./Nav"
-import Post from "./Post"
+import Nav from "./components/Nav"
+import EventItem from "./components/Event"
 export default {
   components: {
     Nav,
-    Post
+    EventItem
   },
   computed: {
-      posts() {
-        let posts = this.$site.pages
+      events() {
+        return this.$site.pages
           .filter(page => page.path.endsWith(".html") && page.path.startsWith(this.$page.path))
           .sort((a, b) => Date.parse(b.frontmatter.datetime) - Date.parse(a.frontmatter.datetime));
-        return posts;
       }
   }
 };

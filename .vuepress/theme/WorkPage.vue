@@ -15,8 +15,8 @@
   </div>
 </template>
 <script>
-import Nav from "./Nav"
-import Work from "./Work"
+import Nav from "./components/Nav"
+import Work from "./components/Work"
 export default {
   components: {
     Nav,

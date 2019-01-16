@@ -44,7 +44,7 @@
   </div>
 </template>
 <script>
-import Nav from "./Nav"
+import Nav from "./components/Nav"
 import axios from 'axios'
 
 export default {
