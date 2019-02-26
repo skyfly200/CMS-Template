@@ -1,6 +1,6 @@
 {
-    "name": "Daniel Vega",
-    "short_name": "Daniel Vega",
+    "name": "VuePress CMS Template",
+    "short_name": "CMS Template",
     "icons": [{
             "src": "/icons/android-chrome-192x192.png",
             "sizes": "192x192",

@@ -10,7 +10,7 @@
     <PostPage v-else-if="isPost" />
     <Base v-else/>
     <v-footer app>
-      <span>&copy; Daniel Vega {{ copyrightYear }}</span>
+      <span>&copy; Skyler Fly-Wilson {{ copyrightYear }}</span>
     </v-footer>
   </v-app>
 </template>
