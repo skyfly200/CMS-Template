@@ -9,7 +9,7 @@ menuIcon: "home"
 
 # Welcome
 
-Here is a basic portfolio site, degined with vuetify, built on VuePress and edited with Netlify CMS.
+Here is a static site, degined with vuetify, built on VuePress and edited with Netlify CMS.
 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at viverra elit. Aenean non urna et nisi egestas consequat. Aliquam ornare, tortor luctus sagittis consectetur, lacus nulla egestas massa, ut malesuada nisi lectus a diam. Cras euismod tortor a elit tincidunt blandit. Nam convallis metus auctor tempor consequat. Ut magna leo, molestie nec sem vel, efficitur laoreet lorem. Proin vel nisl bibendum mi faucibus pretium. Sed eget elementum ante, et faucibus massa. Mauris fermentum interdum magna. Nulla tortor quam, porta eu massa sit amet, ornare bibendum erat.

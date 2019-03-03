@@ -19,7 +19,7 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-md-and-up">
         <v-icon>menu</v-icon>
       </v-toolbar-side-icon>
-      <v-toolbar-title>Daniel Vega</v-toolbar-title>
+      <v-toolbar-title>CMS Template</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat
