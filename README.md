@@ -4,7 +4,6 @@ parallaxImage:
   "https://cdn.vuetifyjs.com/images/parallax/material.jpg"
 parallaxHeader: "Parallax Title"
 parallaxContent: "Parallax Content"
-menuIcon: "home"
 ---
 
 # Welcome
