@@ -42,7 +42,7 @@ export default {
   .paralax-content {
     text-align: center;
   }
-  main {
+  .home main {
     padding: 0 !important;
   }
 </style>
