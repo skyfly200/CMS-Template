@@ -1,7 +1,6 @@
 ---
 pageClass: "bio"
 title: "Bio"
-menuIcon: "face"
 ---
 
 # About

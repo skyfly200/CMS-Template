@@ -47,27 +47,27 @@ module.exports = {
             {
                 text: 'Bio',
                 link: '/bio.html',
-                icon: 'home'
+                icon: 'face'
             },
             {
                 text: 'Listen',
                 link: '/works/',
-                icon: 'home'
+                icon: 'music_note'
             },
             {
                 text: 'Events',
                 link: '/events/',
-                icon: 'home'
+                icon: 'calendar_today'
             },
             {
                 text: 'Blog',
                 link: '/posts/',
-                icon: 'home'
+                icon: 'format_quote'
             },
             {
                 text: 'Contact',
                 link: '/contact.html',
-                icon: 'home'
+                icon: 'email'
             },
         ],
         serviceWorker: {
