@@ -9,9 +9,7 @@
     <Blog v-else-if="isBlog" />
     <PostPage v-else-if="isPost" />
     <Base v-else/>
-    <v-footer app>
-      <span>&copy; Skyler Fly-Wilson {{ copyrightYear }}</span>
-    </v-footer>
+    <Footer />
   </v-app>
 </template>
 <script>
@@ -24,6 +22,7 @@
   import Blog from './Blog';
   import PostPage from './PostPage';
   import Base from './Base';
+  import Footer from "./components/Footer"
   export default {
       components: {
         Home,
@@ -34,7 +33,8 @@
         EventPage,
         Blog,
         PostPage,
-        Base
+        Base,
+        Footer
       },
       computed: {
           isHome() {
@@ -68,9 +68,6 @@
           isPost() {
             const {path} = this.$page;
             return path.startsWith("/posts/");
-          },
-          copyrightYear() {
-            return new Date().getFullYear();
           }
       }
   };
@@ -78,8 +75,5 @@
 <style>
   .container {
     padding: 0
-  }
-  footer span {
-    margin: 0 auto;
   }
 </style>
