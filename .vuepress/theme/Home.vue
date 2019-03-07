@@ -1,6 +1,6 @@
 <template>
-  <div class="base-layout">
-    <Nav class="hidden-md-and-up"  />
+  <div class="base-layout home">
+    <Nav class="hidden-md-and-up" />
     <v-content>
       <v-container fluid>
         <v-parallax :src="$page.frontmatter.parallaxImage">
