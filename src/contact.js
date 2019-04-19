@@ -22,25 +22,25 @@ const sendEmail = data => {
 };
 
 exports.handler = async (event, context, callback) => {
-  // complain if method is not POST or event body is empty
-  if (event.httpMethod !== "POST" || !event.body) {
-    let response = generateResponse({ status: "Invalid Request" }, 200);
-    return callback(null, response);
+  // Only allow POST
+  if (event.httpMethod !== "POST") {
+    return { statusCode: 405, body: "Method Not Allowed" };
   }
-  const data = JSON.parse(event.body);
-
+  // complain if event body is empty
+  if (!event.body) {
+    return generateResponse({ status: "Invalid Request" }, 200);
+  }
   //-- Make sure we have all required data. Otherwise, complain.
   if (
     !data.name ||
     !data.email ||
     !data.message
   ) {
-    let response = generateResponse({ status: "missing-information" }, 200);
-    callback(null, response);
-    return;
+    return generateResponse({ status: "Missing Information" }, 200);
   }
 
-  // build the email object
+  // build the email object from the request body
+  const data = JSON.parse(event.body);
   const email = {
     from: data.email,
     to: contactEmail,
@@ -52,10 +52,8 @@ exports.handler = async (event, context, callback) => {
   // attempt to send email
   try {
     const result = await sendEmail(email);
-    let response = generateResponse({ result: result }, 200);
-    return callback(null, response);
+    return generateResponse({ result: result }, 200);
   } catch {
-    let response = generateResponse({ status: "Error Sending Email" }, 200);
-    return callback(null, response);
+    return generateResponse({ status: "Error Sending Email" }, 200);
   }
 };
