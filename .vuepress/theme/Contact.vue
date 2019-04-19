@@ -68,7 +68,7 @@ export default {
     submit () {
       if (this.$refs.form.validate()) {
         // Native form submission is not yet supported
-        axios.get('localhost:9000/.netlify/functions/contact', {
+        axios.get('/.netlify/functions/contact', {
           name: this.name,
           email: this.email,
           message: this.message
