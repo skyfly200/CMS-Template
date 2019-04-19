@@ -1,3 +1,6 @@
 [build]
-  command = "npm run build" 
+  command = "npm run build"
   publish = ".vuepress/dist/"
+
+  # Directory with the lambda functions to deploy to AWS.
+  functions = "./lambda"
