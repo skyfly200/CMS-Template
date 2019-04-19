@@ -7,29 +7,19 @@ const mailgun = require("mailgun-js")({ apiKey, domain });
 
 const generateResponse = (body, statusCode) => {
   return {
-    headers: {
-      "access-control-allow-methods": "POST",
-      "access-control-allow-origin": "*",
-      "content-type": "application/json"
-    },
     statusCode: statusCode,
     body: JSON.stringify(body)
   };
 };
 
-const sendEmail = data => {
-  const { from, to, subject, text, html } = data;
-  return mailgun.messages().send({ from, to, subject, text, html });
-};
-
-exports.handler = async (event, context, callback) => {
+exports.handler = async (event, context) => {
   // Only allow POST
   if (event.httpMethod !== "POST") {
-    return { statusCode: 405, body: "Method Not Allowed" };
+    return generateResponse("Method Not Allowed", 405);
   }
   // complain if event body is empty
   if (!event.body) {
-    return generateResponse({ status: "Invalid Request" }, 200);
+    return generateResponse("Invalid Request", 400);
   }
   //-- Make sure we have all required data. Otherwise, complain.
   const data = querystring.parse(event.body);
@@ -38,23 +28,29 @@ exports.handler = async (event, context, callback) => {
     !data.email ||
     !data.message
   ) {
-    return generateResponse({ status: "Missing Information" }, 200);
+    return generateResponse("Missing Information", 204);
   }
 
   // build the email object from the request body
   const email = {
     from: data.email,
     to: contactEmail,
-    subject: data.company + " (" + data.industry + ") - " + data.name,
-    text: data.problem,
+    subject: "Contact Form - " + data.name,
+    text: data.message,
     html: ""
   };
 
   // attempt to send email
   try {
-    const result = await sendEmail(email);
-    return generateResponse({ result: result }, 200);
-  } catch {
-    return generateResponse({ status: "Error Sending Email" }, 200);
+    mailgun.messages().send(email, (error, body) => {
+      let resp = error ? generateResponse("Error Sending Email", 400) : generateResponse(body, 200);
+      console.log(resp);
+      console.log("Succeded");
+      return resp2;
+    });
+  } catch (error) {
+    let resp = generateResponse("Server Error", 500);
+    console.error(error);
+    return resp;
   }
 };
