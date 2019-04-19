@@ -12,14 +12,14 @@ const generateResponse = (body, statusCode) => {
   };
 };
 
-exports.handler = async (event, context) => {
+exports.handler = async (event, context, callback) => {
   // Only allow POST
   if (event.httpMethod !== "POST") {
-    return generateResponse("Method Not Allowed", 405);
+    return callback(null, generateResponse("Method Not Allowed", 405));
   }
   // complain if event body is empty
   if (!event.body) {
-    return generateResponse("Invalid Request", 400);
+    return callback(null, generateResponse("Invalid Request", 400));
   }
   //-- Make sure we have all required data. Otherwise, complain.
   const data = querystring.parse(event.body);
@@ -28,7 +28,7 @@ exports.handler = async (event, context) => {
     !data.email ||
     !data.message
   ) {
-    return generateResponse("Missing Information", 204);
+    return callback(null, generateResponse("Missing Information", 400));
   }
 
   // build the email object from the request body
@@ -43,14 +43,12 @@ exports.handler = async (event, context) => {
   // attempt to send email
   try {
     mailgun.messages().send(email, (error, body) => {
-      let resp = error ? generateResponse("Error Sending Email", 400) : generateResponse(body, 200);
-      console.log(resp);
-      console.log("Succeded");
-      return resp2;
+      let resp = error ? generateResponse("Error Sending Email", 500) : generateResponse(body, 200);
+      return callback(null, resp);
     });
   } catch (error) {
     let resp = generateResponse("Server Error", 500);
     console.error(error);
-    return resp;
+    return callback(error);
   }
 };
