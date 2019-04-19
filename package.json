@@ -7,10 +7,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev",
-    "build": "vuepress build"
+    "build": "vuepress build",
+    "dev:f": "netlify-lambda serve src",
+    "build:f": "netlify-lambda build src"
   },
   "devDependencies": {
     "@vuepress/plugin-google-analytics": "^1.0.0-alpha.0",
+    "netlify-lambda": "^1.4.5",
     "vuepress": "^0.14.8"
   },
   "dependencies": {
