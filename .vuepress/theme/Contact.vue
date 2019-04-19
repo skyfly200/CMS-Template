@@ -11,7 +11,7 @@
         </v-card>
         <v-card class="pa-4 ma-4">
           <h2>Get in touch!</h2>
-          <v-form ref="form" v-model="valid" @submit="submit" lazy-validation>
+          <v-form ref="form" v-model="valid" @submit.stop="submit" lazy-validation>
             <v-text-field
               v-model="name"
               :rules="nameRules"
@@ -28,14 +28,13 @@
               v-model="message"
               :rules="messageRules"
               label="Message"
+              auto-grow
               required
             ></v-textarea>
             <v-btn
               :disabled="!valid"
-              @click="submit"
-            >
-              submit
-            </v-btn>
+              @click="submit" >
+            submit</v-btn>
             <v-btn @click="clear">clear</v-btn>
           </v-form>
         </v-card>
@@ -75,6 +74,7 @@ export default {
         })
         .then( resp => {
           console.log(resp);
+          this.$refs.form.reset()
         })
         .catch( error => {
           console.error(error);
