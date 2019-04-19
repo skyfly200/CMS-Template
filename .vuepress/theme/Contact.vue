@@ -11,7 +11,7 @@
         </v-card>
         <v-card class="pa-4 ma-4">
           <h2>Get in touch!</h2>
-          <v-form ref="form" v-model="valid" lazy-validation>
+          <v-form ref="form" v-model="valid" @submit="submit" lazy-validation>
             <v-text-field
               v-model="name"
               :rules="nameRules"
@@ -26,10 +26,10 @@
             ></v-text-field>
             <v-textarea
               v-model="message"
+              :rules="messageRules"
               label="Message"
               required
             ></v-textarea>
-
             <v-btn
               :disabled="!valid"
               @click="submit"
@@ -59,18 +59,26 @@ export default {
       v => !!v || 'E-mail is required',
       v => /.+@.+/.test(v) || 'E-mail must be valid'
     ],
-    message: ''
+    message: '',
+    messageRules: [
+      v => !!v || 'Message is required'
+    ]
   }),
   methods: {
     submit () {
       if (this.$refs.form.validate()) {
         // Native form submission is not yet supported
-        axios.post('/api/submit', {
+        axios.get('localhost:9000/.netlify/functions/contact', {
           name: this.name,
           email: this.email,
-          select: this.select,
-          checkbox: this.checkbox
+          message: this.message
         })
+        .then( resp => {
+          console.log(resp);
+        })
+        .catch( error => {
+          console.error(error);
+        });
       }
     },
     clear () {
