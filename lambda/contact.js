@@ -56090,18 +56090,23 @@ function Node (value, prev, next, list) {
 /*!********************!*\
   !*** ./contact.js ***!
   \********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var querystring__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! querystring */ "querystring");
+/* harmony import */ var querystring__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(querystring__WEBPACK_IMPORTED_MODULE_0__);
 __webpack_require__(/*! dotenv */ "../node_modules/dotenv/lib/main.js").config();
 
+
 const apiKey = process.env.MAILGUN_API_KEY;
-const apiUrl = process.env.DOMAIN;
+const domain = process.env.DOMAIN;
 const contactEmail = process.env.CONTACT_EMAIL;
 
 const mailgun = __webpack_require__(/*! mailgun-js */ "../node_modules/mailgun-js/lib/mailgun.js")({
   apiKey,
-  apiUrl
+  domain
 });
 
 const generateResponse = (body, statusCode) => {
@@ -56150,6 +56155,8 @@ exports.handler = async (event, context, callback) => {
   } //-- Make sure we have all required data. Otherwise, complain.
 
 
+  const data = querystring__WEBPACK_IMPORTED_MODULE_0___default.a.parse(event.body);
+
   if (!data.name || !data.email || !data.message) {
     return generateResponse({
       status: "Missing Information"
@@ -56157,7 +56164,6 @@ exports.handler = async (event, context, callback) => {
   } // build the email object from the request body
 
 
-  const data = JSON.parse(event.body);
   const email = {
     from: data.email,
     to: contactEmail,

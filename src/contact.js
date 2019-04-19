@@ -1,8 +1,9 @@
 require("dotenv").config();
+import querystring from "querystring";
 const apiKey = process.env.MAILGUN_API_KEY;
-const apiUrl = process.env.DOMAIN;
+const domain = process.env.DOMAIN;
 const contactEmail = process.env.CONTACT_EMAIL;
-const mailgun = require("mailgun-js")({ apiKey, apiUrl });
+const mailgun = require("mailgun-js")({ apiKey, domain });
 
 const generateResponse = (body, statusCode) => {
   return {
@@ -31,6 +32,7 @@ exports.handler = async (event, context, callback) => {
     return generateResponse({ status: "Invalid Request" }, 200);
   }
   //-- Make sure we have all required data. Otherwise, complain.
+  const data = querystring.parse(event.body);
   if (
     !data.name ||
     !data.email ||
@@ -40,7 +42,6 @@ exports.handler = async (event, context, callback) => {
   }
 
   // build the email object from the request body
-  const data = JSON.parse(event.body);
   const email = {
     from: data.email,
     to: contactEmail,
