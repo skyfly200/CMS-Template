@@ -85,6 +85,7 @@ export default {
         })
         .then( resp => {
           // check request result for success
+          console.log(resp);
           this.alert = resp;
           this.alertType = "success";
           this.$refs.form.reset()
