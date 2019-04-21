@@ -56144,7 +56144,7 @@ exports.handler = function (event, context, callback) {
   try {
     mailgun.messages().send(email, (error, body) => {
       console.log(email, body);
-      let resp = error ? generateResponse("Error Sending Email", 204) : generateResponse({
+      let resp = generateResponse({
         body
       }, 200);
       console.log(resp);
