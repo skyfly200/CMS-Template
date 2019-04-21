@@ -36,6 +36,7 @@
               @click="submit" >
             submit</v-btn>
             <v-btn @click="clear">clear</v-btn>
+            <v-alert :value="alert" :type="alertType"></v-alert>
           </v-form>
         </v-card>
       </v-container>
@@ -43,12 +44,14 @@
   </div>
 </template>
 <script>
-import Nav from "./components/Nav"
-import axios from 'axios'
+import Nav from "./components/Nav";
+import axios from 'axios';
 
 export default {
   data: () => ({
     valid: true,
+    alertType: "info",
+    alert: "",
     name: '',
     nameRules: [
       v => !!v || 'Name is required'
@@ -73,10 +76,14 @@ export default {
           message: this.message
         })
         .then( resp => {
-          console.log(resp);
+          // check request result for success
+          this.alert = resp.message;
+          this.alertType = "success";
           this.$refs.form.reset()
         })
         .catch( error => {
+          this.alert = error;
+          this.alertType = "error";
           console.error(error);
         });
       }
