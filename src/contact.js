@@ -20,6 +20,7 @@ exports.handler = function(event, context, callback) {
   }
   //-- Make sure we have all required data. Otherwise, complain.
   const data = querystring.parse(event.body);
+  console.log(event.body, data);
   if (
     !data.name ||
     !data.email ||
