@@ -76,8 +76,7 @@ export default {
   methods: {
     submit () {
       if (this.$refs.form.validate()) {
-        let host = "//localhost:34567";
-        let url = host + "/.netlify/functions/contact";
+        let url = "/.netlify/functions/contact";
         axios.post(url, {
           name: this.name,
           email: this.email,
