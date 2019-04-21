@@ -56143,10 +56143,11 @@ exports.handler = function (event, context, callback) {
 
   try {
     mailgun.messages().send(email, (error, body) => {
-      console.log(error, body);
+      console.log(email, body);
       let resp = error ? generateResponse("Error Sending Email", 204) : generateResponse({
         body
       }, 200);
+      console.log(resp);
       return callback(null, resp);
     });
   } catch (error) {
