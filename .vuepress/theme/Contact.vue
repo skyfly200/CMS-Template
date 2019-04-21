@@ -24,6 +24,11 @@
               label="E-mail"
               required
             ></v-text-field>
+            <v-text-field
+              v-model="subject"
+              :rules="subjectRules"
+              label="Subject"
+            ></v-text-field>
             <v-textarea
               v-model="message"
               :rules="messageRules"
@@ -61,6 +66,8 @@ export default {
       v => !!v || 'E-mail is required',
       v => /.+@.+/.test(v) || 'E-mail must be valid'
     ],
+    subject: '',
+    subjectRules: [],
     message: '',
     messageRules: [
       v => !!v || 'Message is required'
