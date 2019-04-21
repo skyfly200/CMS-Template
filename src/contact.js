@@ -26,7 +26,7 @@ exports.handler = function(event, context, callback) {
     !data.email ||
     !data.message
   ) {
-    return callback(null, generateResponse("Missing Information", 400));
+    return callback(null, generateResponse("Missing Information", 204));
   }
 
   // build the email object from the request body
@@ -41,7 +41,7 @@ exports.handler = function(event, context, callback) {
   // attempt to send email
   try {
     mailgun.messages().send(email, (error, body) => {
-      let resp = error ? generateResponse("Error Sending Email", 500) : generateResponse({body}, 200);
+      let resp = error ? generateResponse("Error Sending Email", 204) : generateResponse({body}, 200);
       return callback(null, resp);
     });
   } catch (error) {
