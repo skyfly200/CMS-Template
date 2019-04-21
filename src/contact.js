@@ -20,7 +20,6 @@ exports.handler = function(event, context, callback) {
   }
   //-- Make sure we have all required data. Otherwise, complain.
   const data = querystring.parse(event.body);
-  console.log(event.body, data);
   if (
     !data.name ||
     !data.email ||
@@ -28,7 +27,6 @@ exports.handler = function(event, context, callback) {
   ) {
     return callback(null, generateResponse("Missing Information", 204));
   }
-
   // build the email object from the request body
   const email = {
     from: data.email,
@@ -37,10 +35,10 @@ exports.handler = function(event, context, callback) {
     text: data.message,
     html: ""
   };
-
   // attempt to send email
   try {
     mailgun.messages().send(email, (error, body) => {
+      console.log(error, body);
       let resp = error ? generateResponse("Error Sending Email", 204) : generateResponse({body}, 200);
       return callback(null, resp);
     });

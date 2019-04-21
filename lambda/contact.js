@@ -56127,7 +56127,6 @@ exports.handler = function (event, context, callback) {
 
 
   const data = querystring__WEBPACK_IMPORTED_MODULE_0___default.a.parse(event.body);
-  console.log(event.body, data);
 
   if (!data.name || !data.email || !data.message) {
     return callback(null, generateResponse("Missing Information", 204));
@@ -56144,6 +56143,7 @@ exports.handler = function (event, context, callback) {
 
   try {
     mailgun.messages().send(email, (error, body) => {
+      console.log(error, body);
       let resp = error ? generateResponse("Error Sending Email", 204) : generateResponse({
         body
       }, 200);
