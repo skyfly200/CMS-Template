@@ -40,7 +40,7 @@ exports.handler = function(event, context, callback) {
     mailgun.messages().send(email, (error, body) => {
       console.log(email, body);
       let resp = error ? generateResponse("Error Sending Email", 204) : generateResponse({body}, 200);
-        console.log(resp);
+      console.log(resp);
       return callback(null, resp);
     });
   } catch (error) {
