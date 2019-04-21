@@ -56116,15 +56116,13 @@ const generateResponse = (body, statusCode) => {
   };
 };
 
-exports.handler = async (event, context, callback) => {
-  // Only allow POST
+exports.handler = function (event, context, callback) {
   if (event.httpMethod !== "POST") {
+    // Only run on POST requests
     return callback(null, generateResponse("Method Not Allowed", 405));
-  } // complain if event body is empty
-
-
-  if (!event.body) {
-    return callback(null, generateResponse("Invalid Request", 400));
+  } else if (!event.body) {
+    // complain if event body is empty
+    return callback(null, generateResponse("Invalid Request", 204));
   } //-- Make sure we have all required data. Otherwise, complain.
 
 
@@ -56138,14 +56136,16 @@ exports.handler = async (event, context, callback) => {
   const email = {
     from: data.email,
     to: contactEmail,
-    subject: "Contact Form - " + data.name,
+    subject: data.subject ? data.subject : "Contact Form - " + data.name,
     text: data.message,
     html: ""
   }; // attempt to send email
 
   try {
     mailgun.messages().send(email, (error, body) => {
-      let resp = error ? generateResponse("Error Sending Email", 500) : generateResponse(body, 200);
+      let resp = error ? generateResponse("Error Sending Email", 500) : generateResponse({
+        body
+      }, 200);
       return callback(null, resp);
     });
   } catch (error) {

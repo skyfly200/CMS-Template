@@ -76,10 +76,12 @@ export default {
   methods: {
     submit () {
       if (this.$refs.form.validate()) {
-        // Native form submission is not yet supported
-        axios.get('/.netlify/functions/contact', {
+        let host = "//localhost:34567";
+        let url = host + "/.netlify/functions/contact";
+        axios.post(url, {
           name: this.name,
           email: this.email,
+          subject: this.subject,
           message: this.message
         })
         .then( resp => {
