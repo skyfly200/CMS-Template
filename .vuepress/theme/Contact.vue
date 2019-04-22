@@ -41,7 +41,7 @@
               @click="submit" >
             submit</v-btn>
             <v-btn @click="clear">clear</v-btn>
-            <v-alert :value="alert" :type="alertType"></v-alert>
+            <v-alert v-if="alert" :value="alert" :type="alertType"> {{ alert }} </v-alert>
           </v-form>
         </v-card>
       </v-container>
@@ -75,6 +75,7 @@ export default {
   }),
   methods: {
     submit () {
+      console.log(new Date());
       if (this.$refs.form.validate()) {
         let url = "/.netlify/functions/contact";
         axios.post(url, {
@@ -86,12 +87,12 @@ export default {
         .then( resp => {
           // check request result for success
           console.log(resp);
-          this.alert = resp;
+          this.alert = "Message Sent!";
           this.alertType = "success";
           this.$refs.form.reset()
         })
         .catch( error => {
-          this.alert = error;
+          this.alert = "An Error Ocurred!";
           this.alertType = "error";
           console.error(error);
         });
