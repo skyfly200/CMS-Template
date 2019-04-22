@@ -56130,7 +56130,7 @@ exports.handler = function (event, context, callback) {
   const data = querystring__WEBPACK_IMPORTED_MODULE_0___default.a.parse(event.body);
 
   if (!data.name || !data.email || !data.message) {
-    console.log("2");
+    console.log("2", data);
     return callback(null, generateResponse("Missing Information", 204));
   } // build the email object from the request body
 

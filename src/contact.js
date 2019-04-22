@@ -26,7 +26,7 @@ exports.handler = function(event, context, callback) {
     !data.email ||
     !data.message
   ) {
-    console.log("2");
+    console.log("2", data);
     return callback(null, generateResponse("Missing Information", 204));
   }
   // build the email object from the request body
