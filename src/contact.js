@@ -20,7 +20,6 @@ exports.handler = function(event, context, callback) {
   }
   //-- Make sure we have all required data. Otherwise, complain.
   const data = querystring.parse(event.body);
-  console.log(event);
   if (
     !data.name ||
     !data.email ||
@@ -39,6 +38,7 @@ exports.handler = function(event, context, callback) {
   // attempt to send email
   try {
     mailgun.messages().send(email, (error, body) => {
+      console.log(body);
       let resp = generateResponse({body}, 200);
       return callback(null, resp);
     });
