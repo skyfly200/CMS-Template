@@ -3,10 +3,13 @@
     <Nav />
     <v-content>
       <v-container fluid>
-        <v-card class="pa-4 ma-4">
+        <v-layout class="pa-4 page-title">
+          <h1>{{ $page.title }}</h1>
+        </v-layout>
+        <v-card class="contact-info pa-4 ma-4">
           <h1> {{ $page.frontmatter.contactBlurb }} </h1>
-          <h2> {{ $page.frontmatter.phone }} </h2>
-          <h2> {{ $page.frontmatter.email }} </h2>
+          <a :href="'tel:' + $page.frontmatter.phone"><h2> {{ $page.frontmatter.phone }} </h2></a>
+          <a :href="'mailto:' + $page.frontmatter.email"><h2> {{ $page.frontmatter.email }} </h2></a>
           <Content />
         </v-card>
         <v-card class="pa-4 ma-4">
@@ -110,5 +113,15 @@ export default {
 <style>
   .card-header {
     text-align: center;
+  }
+  @media( max-width: 425px ) {
+    .contact-info {
+      font-size: 0.9em;
+    }
+  }
+  @media( max-width: 350px ) {
+    .contact-info {
+      font-size: 0.75em;
+    }
   }
 </style>
