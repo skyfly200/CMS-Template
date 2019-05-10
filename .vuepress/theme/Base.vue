@@ -3,6 +3,9 @@
     <Nav />
     <v-content>
       <v-container fluid>
+        <v-layout class="pa-4 page-title">
+          <h1>{{ $page.title }}</h1>
+        </v-layout>
         <v-layout class="pa-4">
           <Content />
         </v-layout>
