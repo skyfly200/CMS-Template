@@ -5,7 +5,7 @@
       <v-container fluid>
         <v-layout class="pa-4" align-center justify-center fill-height>
           <v-flex xs12 md10>
-            <EventItem :frontmatter="$page.frontmatter" :path="$page.path">
+            <EventItem :frontmatter="$page.frontmatter" :feature="true" :path="$page.path">
               <Content />
             </EventItem>
           </v-flex>
