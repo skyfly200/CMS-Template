@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: skyfly200/Daniel-Vega-Site
+  repo: skyfly200/CMS-Template
   branch: master
 
 public_folder: "/assets"
