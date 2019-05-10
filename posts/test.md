@@ -5,7 +5,6 @@ datetime: 12/28/2018 4:10 PM
 description:
   you can have a short post description here
 ---
-# Blog Post 1
 
 then the rest of the post body goes here
 
