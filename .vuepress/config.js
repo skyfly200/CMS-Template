@@ -39,7 +39,8 @@ module.exports = {
         search: false,
         repo: 'skyfly200/CMS-Template',
         lastUpdated: 'Last Updated', // string | boolean
-        nav: [{
+        nav: [
+          {
                 text: 'Home',
                 link: '/',
                 icon: 'home'
