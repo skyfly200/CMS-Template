@@ -22,7 +22,7 @@
   import Blog from './Blog';
   import PostPage from './PostPage';
   import Base from './Base';
-  import Footer from "./components/Footer"
+  import Footer from "./components/Footer";
   export default {
       components: {
         Home,
