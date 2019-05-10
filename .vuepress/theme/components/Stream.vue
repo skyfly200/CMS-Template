@@ -9,4 +9,8 @@ export default {
 };
 </script>
 <style>
+audio {
+  width: 100%;
+  margin: 20px 0;
+}
 </style>
