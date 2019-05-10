@@ -6,8 +6,6 @@ parallaxHeader: "Parallax Title"
 parallaxContent: "Parallax Content"
 ---
 
-# Welcome
-
 Here is a static site, degined with vuetify, built on VuePress and edited with Netlify CMS.
 
 

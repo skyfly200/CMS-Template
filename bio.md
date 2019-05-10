@@ -3,8 +3,6 @@ pageClass: "bio"
 title: "Bio"
 ---
 
-# About
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at viverra elit. Aenean non urna et nisi egestas consequat. Aliquam ornare, tortor luctus sagittis consectetur, lacus nulla egestas massa, ut malesuada nisi lectus a diam. Cras euismod tortor a elit tincidunt blandit. Nam convallis metus auctor tempor consequat. Ut magna leo, molestie nec sem vel, efficitur laoreet lorem. Proin vel nisl bibendum mi faucibus pretium. Sed eget elementum ante, et faucibus massa. Mauris fermentum interdum magna. Nulla tortor quam, porta eu massa sit amet, ornare bibendum erat.
 
 Duis urna diam, ornare eget dui sed, lobortis hendrerit felis. Suspendisse dolor elit, pretium sed facilisis vel, venenatis venenatis arcu. Cras pellentesque vitae libero nec condimentum. Duis ac congue est. Etiam posuere, est vel pretium cursus, mi libero sollicitudin quam, eu viverra risus lacus a velit. Phasellus et efficitur mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer quis felis in magna venenatis cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam mauris velit, tempus a lobortis ac, egestas non dolor. In hac habitasse platea dictumst. Donec maximus dolor non aliquet elementum.

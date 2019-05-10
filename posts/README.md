@@ -1,6 +1,5 @@
 ---
 title: Blog
 ---
-# Blog Posts
 
-* test blog page
+test blog page
