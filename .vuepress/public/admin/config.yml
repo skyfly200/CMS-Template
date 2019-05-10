@@ -1,7 +1,7 @@
 backend:
-  name: github
-  repo: skyfly200/CMS-Template
-  branch: master
+  name: git-gateway
+  accept_roles:
+    - admin
 
 public_folder: "/assets"
 media_folder: ".vuepress/public/assets"
