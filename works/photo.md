@@ -1,6 +1,6 @@
 ---
-title: CCRN Shed @ Frozen Dead Guy Days 2015
+title: Photo
 workType: photo
 file: /assets/FDGD2015.jpg
 ---
-Our studio at Frozen Dead Guy Days
+You may describe your photo here

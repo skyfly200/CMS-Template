@@ -1,7 +1,6 @@
 ---
-title: Way High Live
+title: Archive.org Playlist
 workType: archive
 id: WayHighLive
 playlist: true
 ---
-
