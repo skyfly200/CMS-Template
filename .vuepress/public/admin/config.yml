@@ -70,7 +70,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string", hint: "Title of the content group"}
-      - {label: "Created", name: "created", widget: "datetime", format: "MMM Do YY", hint: "Date and time media was created"}
+      - {label: "Created", name: "created", widget: "datetime", format: "MMMM Do YYYY", hint: "Date and time media was created"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
       - label: "Media"
         name: "media"
@@ -138,7 +138,7 @@ collections:
       - {label: "Venue", name: "venue", widget: "string", required: false, hint: "Event venue name"}
       - {label: "Venue Url", name: "venueUrl", widget: "string", required: false, hint: "URL of the venue"}
       - {label: "Location", name: "location", widget: "string", hint: "Location of the event"}
-      - {label: "Date and Time", name: "datetime", widget: "datetime", format: "MMM Do YY", hint: "Date and time of the event"}
+      - {label: "Date and Time", name: "datetime", widget: "datetime", format: "MMMM Do YYYY hh:mm a", hint: "Date and time of the event"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "posts"
     label: "Blog Posts"
