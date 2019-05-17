@@ -11,6 +11,7 @@ collections:
   - name: "pages"
     label: "Pages"
     delete: false
+    description: "Individual site pages not part of a collection"
     files:
       - label: "Home"
         name: "home"
