@@ -54,7 +54,7 @@ collections:
     description: "Show off your media content, with Audio, Video, Photo & Embeded content"
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string", hint: "Title used for page heading and browser tab title"}
+      - {label: "Title", name: "title", widget: "string", hint: "Title of the item"}
       - {label: "Type", name: "workType", widget: "select", options: ["", "audio", "video", "youtube"]}
       - {label: "File", name: "file", widget: "file", required: false}
       - {label: "ID", name: "id", widget: "string", required: false}
@@ -68,7 +68,7 @@ collections:
     description: "Show off your media content, with Audio, Video, Photo & Embeded content"
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string", hint: "Title used for page heading and browser tab title"}
+      - {label: "Title", name: "title", widget: "string", hint: "Title of the content group"}
       - {label: "Created", name: "created", widget: "datetime", format: "MMM Do YY", hint: "Date and time media was created"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
       - label: "Media"
@@ -79,7 +79,7 @@ collections:
             name: 'image'
             widget: 'object'
             fields:
-              - {label: "Title", name: "title", widget: "string", hint: "Title used for page heading and browser tab title"}
+              - {label: "Title", name: "title", widget: "string", hint: "Title of the image"}
               - {label: "Path", name: "path", widget: "string", required: false, hint: "URL of an image"}
               - {label: "File", name: "file", widget: "file", required: false, hint: "Upload or select a previously uploaded image"}
               - {label: "Description", name: "description", widget: "markdown", required: false}
@@ -87,7 +87,7 @@ collections:
             name: 'audio'
             widget: 'object'
             fields:
-              - {label: "Title", name: "title", widget: "string", hint: "Title used for page heading and browser tab title"}
+              - {label: "Title", name: "title", widget: "string", hint: "Title of the audio file"}
               - {label: "Path", name: "path", widget: "string", required: false, hint: "URL to an audio file"}
               - {label: "File", name: "file", widget: "file", required: false, hint: "Upload or select a previously uploaded audio file"}
               - {label: "Description", name: "description", widget: "markdown", required: false}
