@@ -69,56 +69,56 @@ collections:
       - {label: "Created", name: "created", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
       - label: "Media"
-      name: "media"
-      widget: 'list'
-      types:
-        - label: 'Image'
-          name: 'image'
-          widget: 'object'
-          fields:
-            - {label: "Title", name: "title", widget: "string"}
-            - {label: "Path", name: "path", widget: "string", required: false}
-            - {label: "File", name: "file", widget: "file", required: false}
-            - {label: "Description", name: "description", widget: "markdown", required: false}
-        - label: 'Audio'
-          name: 'audio'
-          widget: 'object'
-          fields:
-            - {label: "Title", name: "title", widget: "string"}
-            - {label: "Path", name: "path", widget: "string", required: false}
-            - {label: "File", name: "file", widget: "file", required: false}
-            - {label: "Description", name: "description", widget: "markdown", required: false}
-        - label: 'Stream'
-          name: 'stream'
-          widget: 'object'
-          fields:
-            - {label: "Title", name: "title", widget: "string"}
-            - {label: "Path", name: "path", widget: "string"}
-            - {label: "Description", name: "description", widget: "markdown", required: false}
-        - label: 'Video'
-          name: 'video'
-          widget: 'object'
-          fields:
-            - {label: "Title", name: "title", widget: "string"}
-            - {label: "Path", name: "path", widget: "string", required: false}
-            - {label: "File", name: "file", widget: "file", required: false}
-            - {label: "Description", name: "description", widget: "markdown", required: false}
-        - label: 'Youtube'
-          name: 'youtube'
-          widget: 'object'
-          fields:
-            - {label: "Title", name: "title", widget: "string"}
-            - {label: "ID", name: "id", widget: "string", required: false}
-            - {label: "Is a Playlist", name: "playlist", widget: "boolean", required: false}
-            - {label: "Description", name: "description", widget: "markdown", required: false}
-        - label: 'Archive.org'
-          name: 'archive.org'
-          widget: 'object'
-          fields:
-            - {label: "Title", name: "title", widget: "string"}
-            - {label: "ID", name: "id", widget: "string", required: false}
-            - {label: "Is a Playlist", name: "playlist", widget: "boolean", required: false}
-            - {label: "Description", name: "description", widget: "markdown", required: false}
+        name: "media"
+        widget: 'list'
+        types:
+          - label: 'Image'
+            name: 'image'
+            widget: 'object'
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Path", name: "path", widget: "string", required: false}
+              - {label: "File", name: "file", widget: "file", required: false}
+              - {label: "Description", name: "description", widget: "markdown", required: false}
+          - label: 'Audio'
+            name: 'audio'
+            widget: 'object'
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Path", name: "path", widget: "string", required: false}
+              - {label: "File", name: "file", widget: "file", required: false}
+              - {label: "Description", name: "description", widget: "markdown", required: false}
+          - label: 'Stream'
+            name: 'stream'
+            widget: 'object'
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Path", name: "path", widget: "string"}
+              - {label: "Description", name: "description", widget: "markdown", required: false}
+          - label: 'Video'
+            name: 'video'
+            widget: 'object'
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Path", name: "path", widget: "string", required: false}
+              - {label: "File", name: "file", widget: "file", required: false}
+              - {label: "Description", name: "description", widget: "markdown", required: false}
+          - label: 'Youtube'
+            name: 'youtube'
+            widget: 'object'
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "ID", name: "id", widget: "string", required: false}
+              - {label: "Is a Playlist", name: "playlist", widget: "boolean", required: false}
+              - {label: "Description", name: "description", widget: "markdown", required: false}
+          - label: 'Archive.org'
+            name: 'archive.org'
+            widget: 'object'
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "ID", name: "id", widget: "string", required: false}
+              - {label: "Is a Playlist", name: "playlist", widget: "boolean", required: false}
+              - {label: "Description", name: "description", widget: "markdown", required: false}
   - name: "events"
     label: "Events"
     folder: "events"
