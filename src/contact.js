@@ -32,8 +32,13 @@ exports.handler = function(event, context, callback) {
     from: data.email,
     to: contactEmail,
     subject: data.subject ? data.subject : "Contact Form - " + data.name,
-    text: data.message,
-    html: ""
+    html: `
+      <h1>New Contact Form Submission</h1>
+      <h3><b>Name:</b>${data.name}</h3>
+      <h3><b>Email:</b>${data.email}</h3>
+      <h4>${new Date().toLocaleString()}</h4>
+      <p>${data.message}</p>
+      `
   };
   // attempt to send email
   try {
