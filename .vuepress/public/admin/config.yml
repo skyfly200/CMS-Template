@@ -70,7 +70,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string", hint: "Title of the content group"}
-      - {label: "Created", name: "created", widget: "datetime", format: "MMMM Do YYYY", hint: "Date and time media was created"}
+      - {label: "Created", name: "created", widget: "date", format: "MMMM Do YYYY", hint: "Date media was created"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
       - label: "Media"
         name: "media"
