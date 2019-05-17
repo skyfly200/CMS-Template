@@ -15,6 +15,7 @@ collections:
       - label: "Home"
         name: "home"
         file: "README.md"
+        description: "Site home page with paralax landing image"
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Menu Icon", name: "menuIcon", widget: "string"}
@@ -25,6 +26,7 @@ collections:
       - label: "Bio"
         name: "bio"
         file: "bio.md"
+        description: "A bio page"
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Menu Icon", name: "menuIcon", widget: "string"}
@@ -32,6 +34,7 @@ collections:
       - label: "Contact"
         name: "contact"
         file: "contact.md"
+        description: "A contact page with a contact form"
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Menu Icon", name: "menuIcon", widget: "string"}
@@ -42,6 +45,7 @@ collections:
     label: "Samples"
     folder: "sample"
     delete: false
+    description: "This collection has example markdown content as well as Netlify CMS configuration documentation"
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
@@ -50,6 +54,7 @@ collections:
     label: "Works"
     folder: "works"
     create: true
+    description: "Show off your media content, with Audio, Video, Photo & Embeded content"
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
@@ -63,6 +68,7 @@ collections:
     label: "Works Typed"
     folder: "works2"
     create: true
+    description: "Show off your media content, with Audio, Video, Photo & Embeded content"
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
@@ -123,6 +129,7 @@ collections:
     label: "Events"
     folder: "events"
     create: true
+    description: "Promote past and future events"
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
@@ -139,6 +146,7 @@ collections:
     label: "Blog Posts"
     folder: "posts"
     create: true
+    description: "Add post to your blog"
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
