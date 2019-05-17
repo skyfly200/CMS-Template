@@ -16,23 +16,32 @@
           <h2>Get in touch!</h2>
           <v-form ref="form" v-model="valid" @submit.stop="submit" lazy-validation>
             <v-text-field
+              name="name"
+              type="text"
               v-model="name"
               :rules="nameRules"
               label="Name"
+              autocomplete="name"
               required
             ></v-text-field>
             <v-text-field
+              name="email"
+              type="email"
               v-model="email"
               :rules="emailRules"
               label="E-mail"
+              autocomplete="email"
               required
             ></v-text-field>
             <v-text-field
+              name="subject"
+              type="text"
               v-model="subject"
               :rules="subjectRules"
               label="Subject"
             ></v-text-field>
             <v-textarea
+              name="message"
               v-model="message"
               :rules="messageRules"
               label="Message"
