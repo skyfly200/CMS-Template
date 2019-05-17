@@ -4,6 +4,8 @@
     <Contact v-else-if="isContact"/>
     <Listen v-else-if="isListen" />
     <WorkPage v-else-if="isWork" />
+    <Listen v-else-if="isListen2" />
+    <WorkPage v-else-if="isWork2" />
     <Events v-else-if="isEvents" />
     <EventPage v-else-if="isEvent" />
     <Blog v-else-if="isBlog" />
@@ -49,6 +51,10 @@
             const {path} = this.$page;
             return path === "/works/";
           },
+          isListen2() {
+            const {path} = this.$page;
+            return path === "/works2/";
+          },
           isEvents() {
             const {path} = this.$page;
             return path === "/events/";
@@ -60,6 +66,10 @@
           isWork() {
             const {path} = this.$page;
             return path.startsWith("/works/");
+          },
+          isWork2() {
+            const {path} = this.$page;
+            return path.startsWith("/works2/");
           },
           isEvent() {
             const {path} = this.$page;
