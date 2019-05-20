@@ -55,20 +55,6 @@ collections:
     description: "Show off your media content, with Audio, Video, Photo & Embeded content"
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string", hint: "Title of the item"}
-      - {label: "Type", name: "workType", widget: "select", options: ["", "audio", "video", "youtube"]}
-      - {label: "File", name: "file", widget: "file", required: false}
-      - {label: "ID", name: "id", widget: "string", required: false}
-      - {label: "Is a Playlist", name: "playlist", widget: "boolean", required: false}
-      - {label: "Embed Code", name: "raw", widget: "string", required: false}
-      - {label: "Body", name: "body", widget: "markdown", required: false}
-  - name: "works-typed"
-    label: "Works Typed"
-    folder: "works2"
-    create: true
-    description: "Show off your media content, with Audio, Video, Photo & Embeded content"
-    slug: "{{slug}}"
-    fields:
       - {label: "Title", name: "title", widget: "string", hint: "Title of the content group"}
       - {label: "Created", name: "created", widget: "date", format: "MMMM Do YYYY", hint: "Date media was created"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
