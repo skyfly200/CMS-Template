@@ -1,16 +1,24 @@
 <template>
   <v-card>
     <v-card-title>
-      <h1> {{ frontmatter.title }} </h1>
+      <div class="header">
+        <h1>{{ frontmatter.title }}</h1>
+        <h4>{{ frontmatter.created }}</h4>
+      </div>
     </v-card-title>
     <v-divider light></v-divider>
     <v-card-text>
-      <Audio v-if="frontmatter.workType === 'audio'" :frontmatter="frontmatter"/>
-      <Archive v-if="frontmatter.workType === 'archive'" :id="frontmatter.id" :playlist="frontmatter.playlist"/>
-      <Stream v-if="frontmatter.workType === 'stream'" :frontmatter="frontmatter"/>
-      <Video v-if="frontmatter.workType === 'video'" :frontmatter="frontmatter"/>
-      <Photo v-if="frontmatter.workType === 'photo'" :frontmatter="frontmatter"/>
-      <YouTube v-if="frontmatter.workType === 'youtube'" :frontmatter="frontmatter"/>
+      <div v-for="m in frontmatter.media">
+        <h3 v-if="m.title">{{ m.title }}</h3>
+        <p v-if="m.description">{{ m.description }}</p>
+        <Audio v-if="m.type === 'audio'" :file="m.file"/>
+        <Archive v-if="m.type === 'archive.org'" :id="m.id" :playlist="m.playlist"/>
+        <Stream v-if="m.type === 'stream'" :url="m.url"/>
+        <Video v-if="m.type === 'video'" :file="m.file"/>
+        <Photo v-if="m.type === 'image'" :src="m.file"/>
+        <YouTube v-if="m.type === 'youtube'" :id="m.id" :playlist="m.playlist"/>
+        <br><br>
+      </div>
       <slot></slot>
     </v-card-text>
     <v-card-actions v-if="feature">
@@ -38,4 +46,8 @@ export default {
 };
 </script>
 <style>
+.header {
+  display: flex;
+  flex-direction: column;
+}
 </style>
