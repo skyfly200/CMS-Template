@@ -33,7 +33,7 @@
     <template v-if="!feature">
       <v-divider light></v-divider>
       <v-card-actions class="pa-3">
-        <v-btn :to="path" flat color="blue">Read More</v-btn>
+        <v-btn :to="path" depressed color="primary">Read More</v-btn>
       </v-card-actions>
   </template>
   </v-card>
