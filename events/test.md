@@ -6,9 +6,9 @@ facebook: https://www.facebook.com/events/902572896740314/
 location: New York, NY
 datetime: 12/28/2018 4:10 PM
 group: Random Music Group
-groupUrl: null
+groupUrl: http://www.example.com/
 venue: Carnegie Hall
-venueUrl: null
+venueUrl: http://www.example.com/
 description:
   you can have a short post description here
 ---
