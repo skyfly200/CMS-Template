@@ -2,6 +2,7 @@
 title: Test Event
 image: https://cdn.vuetifyjs.com/images/cards/docks.jpg
 url: http://www.example.com/
+facebook: https://www.facebook.com/events/902572896740314/
 location: New York, NY
 datetime: 12/28/2018 4:10 PM
 group: Random Music Group

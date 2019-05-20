@@ -119,6 +119,7 @@ collections:
       - {label: "Title", name: "title", widget: "string", hint: "Title of the blog post"}
       - {label: "Image", name: "image", widget: "image", required: false, hint: "Heading image for post"}
       - {label: "Event Url", name: "url", widget: "string", required: false, hint: "URL of the Event"}
+      - {label: "Facebook Event", name: "facebook", widget: "string", required: false, hint: "URL of the Facebook event"}
       - {label: "Group", name: "group", widget: "string", required: false, hint: "Event group name"}
       - {label: "Group Url", name: "groupUrl", widget: "string", required: false, hint: "URL of the group"}
       - {label: "Venue", name: "venue", widget: "string", required: false, hint: "Event venue name"}

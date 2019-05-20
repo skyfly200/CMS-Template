@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-img v-if="frontmatter.image && !feature" :src="$withBase(frontmatter.image)" alt="Event Poster" class="img" />
+    <v-img v-if="frontmatter.image && !feature" :src="$withBase(frontmatter.image)" alt="Event Poster" height="200px" class="img" />
     <v-card-title primary-title>
       <h1>{{ frontmatter.title }}</h1>
     </v-card-title>
@@ -30,7 +30,14 @@
     <v-divider></v-divider>
     <v-card-actions class="pa-3">
       <v-btn v-if="!feature" :to="path" depressed color="primary">Read More</v-btn>
-      <v-btn v-if="frontmatter.url" :href="frontmatter.url" depressed color="primary">Visit Event Website</v-btn>
+      <v-btn v-if="frontmatter.url" :href="frontmatter.url" depressed color="primary">
+        <v-icon left>public</v-icon>
+        Website
+      </v-btn>
+      <v-btn v-if="frontmatter.facebook" :href="frontmatter.facebook" depressed color="primary">
+        <img height="22px" class="v-icon v-icon--left material-icons theme--dark" src="/assets/fb-logo.png"/>
+        Facebook
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
