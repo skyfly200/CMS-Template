@@ -11,9 +11,9 @@
         </v-layout>
         <v-layout class="pa-2" justify-left row wrap fill-height>
           <v-flex v-for="w in works" :key="w.title" xs12 md6>
-            <Work class="work section ma-2" feature="true" v-bind="w">
+            <Work2 class="work section ma-2" feature="true" v-bind="w">
               <p> {{ w.frontmatter.description }} </p>
-            </Work>
+            </Work2>
           </v-flex>
         </v-layout>
       </v-container>
@@ -21,12 +21,12 @@
   </div>
 </template>
 <script>
-import Nav from "./components/Nav"
-import Work from "./components/Work"
+import Nav from "./components/Nav";
+import Work2 from "./components/Work2";
 export default {
   components: {
     Nav,
-    Work
+    Work2
   },
   computed: {
       works() {
