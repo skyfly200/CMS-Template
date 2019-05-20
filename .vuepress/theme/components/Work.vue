@@ -6,7 +6,7 @@
     <v-divider light></v-divider>
     <v-card-text>
       <Audio v-if="frontmatter.workType === 'audio'" :frontmatter="frontmatter"/>
-      <Archive v-if="frontmatter.workType === 'archive'" :frontmatter="frontmatter"/>
+      <Archive v-if="frontmatter.workType === 'archive'" :id="frontmatter.id" :playlist="frontmatter.playlist"/>
       <Stream v-if="frontmatter.workType === 'stream'" :frontmatter="frontmatter"/>
       <Video v-if="frontmatter.workType === 'video'" :frontmatter="frontmatter"/>
       <Photo v-if="frontmatter.workType === 'photo'" :frontmatter="frontmatter"/>

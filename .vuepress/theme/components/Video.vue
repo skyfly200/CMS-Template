@@ -1,12 +1,12 @@
 <template>
-  <video controls :src="frontmatter.file">
+  <video controls :src="file">
     Your browser does not support the video tag.
-    <a :href="frontmatter.file">Here is a link to the file.</a>
+    <a :href="file">Here is a link to the file.</a>
   </video>
 </template>
 <script>
 export default {
-  props: ["frontmatter"]
+  props: ["file"]
 };
 </script>
 <style>

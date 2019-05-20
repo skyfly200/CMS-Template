@@ -1,9 +1,9 @@
 <template>
-  <v-img :src="frontmatter.file" />
+  <v-img :src="src" />
 </template>
 <script>
 export default {
-  props: ["frontmatter"]
+  props: ["src"]
 };
 </script>
 <style>

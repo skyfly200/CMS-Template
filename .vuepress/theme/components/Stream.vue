@@ -1,11 +1,11 @@
 <template>
-  <audio :src="frontmatter.url" controls>
-    Your browser does not support the audio element. Here is a <a :href="frontmatter.url">link to the stream</a> instead.
+  <audio :src="url" controls>
+    Your browser does not support the audio element. Here is a <a :href="url">link to the stream</a> instead.
   </audio>
 </template>
 <script>
 export default {
-  props: ["frontmatter"]
+  props: ["url"]
 };
 </script>
 <style>

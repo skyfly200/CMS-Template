@@ -5,15 +5,15 @@
 </template>
 <script>
 export default {
-  props: ["frontmatter"],
+  props: ["id", "playlist"],
   computed: {
     contentUrl: function() {
-      let url = "https://archive.org/embed/" + this.frontmatter.id;
-      if (this.frontmatter.playlist) url = url + "&playlist=1&list_height=" + this.listHeight;
+      let url = "https://archive.org/embed/" + this.id;
+      if (this.playlist) url = url + "&playlist=1&list_height=" + this.listHeight;
       return url;
     },
     height: function() {
-      return this.frontmatter.playlist ? (this.listHeight + 30) : 30;
+      return this.playlist ? (this.listHeight + 30) : 30;
     },
     listHeight: function() {
       let count = 7;
