@@ -22,7 +22,7 @@
       <slot></slot>
     </v-card-text>
     <v-card-actions v-if="feature">
-      <v-btn :to="path" flat >Read More</v-btn>
+      <v-btn :to="path"  flat color="blue">Read More</v-btn>
     </v-card-actions>
   </v-card>
 </template>
