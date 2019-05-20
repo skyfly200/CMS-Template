@@ -1,6 +1,6 @@
 ---
-title: All List Types
-created: May 17th 2019
+title: Just a Stream
+created: May 20th 2019
 media:
   - title: Audio Stream Test
     type: stream
