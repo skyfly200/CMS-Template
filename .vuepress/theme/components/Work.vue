@@ -6,7 +6,7 @@
         <h4>{{ frontmatter.created }}</h4>
       </div>
     </v-card-title>
-    <v-divider light></v-divider>
+    <v-divider></v-divider>
     <v-card-text>
       <div v-for="m in frontmatter.media">
         <h3 v-if="m.title">{{ m.title }}</h3>
@@ -21,6 +21,7 @@
       </div>
       <slot></slot>
     </v-card-text>
+    <v-divider></v-divider>
     <v-card-actions v-if="feature">
       <v-btn :to="path" depressed color="primary">Read More</v-btn>
     </v-card-actions>

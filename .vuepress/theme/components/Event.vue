@@ -2,12 +2,8 @@
   <v-card>
     <v-img v-if="frontmatter.image && !feature" :src="$withBase(frontmatter.image)" alt="Event Poster" class="img" />
     <v-card-title primary-title>
-      <a v-if="frontmatter.url" :href="frontmatter.url">
-        <h1> {{ frontmatter.title }} </h1>
-      </a>
-      <h1 v-else> {{ frontmatter.title }} </h1>
+      <h1>{{ frontmatter.title }}</h1>
     </v-card-title>
-    <v-divider light></v-divider>
     <v-card-text>
       <v-container fluid>
         <v-layout row wrap>
@@ -25,17 +21,17 @@
               <h3 v-else-if="frontmatter.venue"> {{ frontmatter.venue }} </h3>
               <h4 v-if="frontmatter.location"> {{ frontmatter.location }} </h4>
               <h5> {{ frontmatter.datetime }} </h5>
+              <a v-if="frontmatter.url" :href="frontmatter.url"><h3>{{ frontmatter.url }}</h3></a>
               <slot></slot>
           </v-flex>
         </v-layout>
       </v-container>
     </v-card-text>
-    <template v-if="!feature">
-      <v-divider light></v-divider>
-      <v-card-actions class="pa-3">
-        <v-btn :to="path" depressed color="primary">Read More</v-btn>
-      </v-card-actions>
-  </template>
+    <v-divider></v-divider>
+    <v-card-actions class="pa-3">
+      <v-btn v-if="!feature" :to="path" depressed color="primary">Read More</v-btn>
+      <v-btn v-if="frontmatter.url" :href="frontmatter.url" depressed color="primary">Visit Event Website</v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 <script>

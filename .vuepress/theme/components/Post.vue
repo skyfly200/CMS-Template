@@ -7,6 +7,7 @@
     <v-card-text>
       <slot></slot>
     </v-card-text>
+    <v-divider></v-divider>
     <v-card-actions v-if="feature">
       <v-btn :to="path" depressed color="primary">Read More</v-btn>
     </v-card-actions>
