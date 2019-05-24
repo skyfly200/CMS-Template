@@ -1,5 +1,6 @@
 module.exports = {
     title: "CMS Template",
+    ga: "UA-3803212-8",
     locales: {
         '/': {
             lang: 'en-EN',
