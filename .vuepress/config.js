@@ -23,7 +23,7 @@ module.exports = {
     plugins: [
       [
         '@vuepress/google-analytics',
-        { ga: '' }
+        { ga: 'UA-3803212-8' }
       ]
     ],
     configureWebpack: (config, isServer) => {
