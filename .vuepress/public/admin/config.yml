@@ -10,76 +10,133 @@ display_url: https://vuepress-theme.netlify.com/
 collections:
   - name: "pages"
     label: "Pages"
+    delete: false
+    description: "Individual site pages not part of a collection"
     files:
       - label: "Home"
         name: "home"
         file: "README.md"
+        description: "Site home page with paralax landing image"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Menu Icon", name: "menuIcon", widget: "string"}
-          - {label: "Parallax Image", name: "parallaxImage", widget: "file"}
-          - {label: "Parallax Header", name: "parallaxHeader", widget: "string"}
-          - {label: "Parallax Content", name: "parallaxContent", widget: "text"}
+          - {label: "Title", name: "title", widget: "string", hint: "Title used for browser tab title"}
+          - {label: "Parallax Image", name: "parallaxImage", widget: "file", hint: "Landing Image with paralax effect"}
+          - {label: "Parallax Header", name: "parallaxHeader", widget: "string", hint: "Main heading centered on paralax area"}
+          - {label: "Parallax Content", name: "parallaxContent", widget: "text", hint: "Text block centered on paralax area"}
           - {label: "Body", name: "body", widget: "markdown"}
       - label: "Bio"
         name: "bio"
         file: "bio.md"
+        description: "A bio page"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Menu Icon", name: "menuIcon", widget: "string"}
+          - {label: "Title", name: "title", widget: "string", hint: "Title used for page heading and browser tab title"}
           - {label: "Body", name: "body", widget: "markdown"}
       - label: "Contact"
         name: "contact"
         file: "contact.md"
+        description: "A contact page with a contact form"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Menu Icon", name: "menuIcon", widget: "string"}
-          - {label: "Phone", name: "phone", widget: "string"}
-          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Title", name: "title", widget: "string", hint: "Title used for page heading and browser tab title"}
+          - {label: "Phone", name: "phone", widget: "string", hint: "A phone number for people to contact you at"}
+          - {label: "Email", name: "email", widget: "string", hint: "A email for people to contact you at"}
           - {label: "Body", name: "body", widget: "markdown"}
   - name: "sample"
     label: "Samples"
     folder: "sample"
+    delete: false
+    description: "This collection has example markdown content as well as Netlify CMS configuration documentation"
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title", name: "title", widget: "string", hint: "Title used for page heading and browser tab title"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "works"
     label: "Works"
     folder: "works"
     create: true
+    description: "Show off your media content, with Audio, Video, Photo & Embeded content"
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Type", name: "workType", widget: "select", options: ["", "audio", "video", "youtube"]}
-      - {label: "File", name: "file", widget: "file", required: false}
-      - {label: "ID", name: "id", widget: "string", required: false}
-      - {label: "Is a Playlist", name: "playlist", widget: "boolean", required: false}
-      - {label: "Embed Code", name: "raw", widget: "string", required: false}
+      - {label: "Title", name: "title", widget: "string", hint: "Title of the content group"}
+      - {label: "Created", name: "created", widget: "date", format: "MMMM Do YYYY", hint: "Date media was created"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Media"
+        name: "media"
+        widget: 'list'
+        types:
+          - label: 'Image'
+            name: 'image'
+            widget: 'object'
+            fields:
+              - {label: "Title", name: "title", widget: "string", hint: "Title of the image"}
+              - {label: "Path", name: "path", widget: "string", required: false, hint: "URL of an image"}
+              - {label: "File", name: "file", widget: "file", required: false, hint: "Upload or select a previously uploaded image"}
+              - {label: "Description", name: "description", widget: "markdown", required: false}
+          - label: 'Audio'
+            name: 'audio'
+            widget: 'object'
+            fields:
+              - {label: "Title", name: "title", widget: "string", hint: "Title of the audio file"}
+              - {label: "Path", name: "path", widget: "string", required: false, hint: "URL to an audio file"}
+              - {label: "File", name: "file", widget: "file", required: false, hint: "Upload or select a previously uploaded audio file"}
+              - {label: "Description", name: "description", widget: "markdown", required: false}
+          - label: 'Audio Stream'
+            name: 'stream'
+            widget: 'object'
+            fields:
+              - {label: "Title", name: "title", widget: "string", hint: "Title of the audio stream"}
+              - {label: "Stream URL", name: "url", widget: "string", hint: "The URL of an audio stream"}
+              - {label: "Description", name: "description", widget: "markdown", required: false}
+          - label: 'Video'
+            name: 'video'
+            widget: 'object'
+            fields:
+              - {label: "Title", name: "title", widget: "string", hint: "Title of the video"}
+              - {label: "Path", name: "path", widget: "string", required: false, hint: "URL to a video file"}
+              - {label: "File", name: "file", widget: "file", required: false, hint: "Upload or select a previously uploaded video file"}
+              - {label: "Description", name: "description", widget: "markdown", required: false}
+          - label: 'Youtube'
+            name: 'youtube'
+            widget: 'object'
+            fields:
+              - {label: "Title", name: "title", widget: "string", hint: "Title of the Youtube video"}
+              - {label: "ID", name: "id", widget: "string", required: false, hint: "ID of the Youtube video"}
+              - {label: "Is a Playlist", name: "playlist", widget: "boolean", required: false, hint: "Is this a playlist?"}
+              - {label: "Description", name: "description", widget: "markdown", required: false}
+          - label: 'Archive.org'
+            name: 'archive.org'
+            widget: 'object'
+            fields:
+              - {label: "Title", name: "title", widget: "string", hint: "Title of the Archive"}
+              - {label: "ID", name: "id", widget: "string", required: false, hint: "ID of the Archive.org archive"}
+              - {label: "Is a Playlist", name: "playlist", widget: "boolean", required: false, hint: "Is this a playlist?"}
+              - {label: "Description", name: "description", widget: "markdown", required: false}
   - name: "events"
     label: "Events"
     folder: "events"
     create: true
+    description: "Promote past and future events"
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Event Url", name: "url", widget: "string", required: false}
-      - {label: "Group", name: "group", widget: "string", required: false}
-      - {label: "Group Url", name: "groupUrl", widget: "string", required: false}
-      - {label: "Venue", name: "venue", widget: "string", required: false}
-      - {label: "Venue Url", name: "venueUrl", widget: "string", required: false}
-      - {label: "Location", name: "location", widget: "string"}
-      - {label: "Date and Time", name: "datetime", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string", hint: "Title of the blog post"}
+      - {label: "Image", name: "image", widget: "image", required: false, hint: "Heading image for post"}
+      - {label: "Event Url", name: "url", widget: "string", required: false, hint: "URL of the Event"}
+      - {label: "Facebook Event", name: "facebook", widget: "string", required: false, hint: "URL of the Facebook event"}
+      - {label: "Group", name: "group", widget: "string", required: false, hint: "Event group name"}
+      - {label: "Group Url", name: "groupUrl", widget: "string", required: false, hint: "URL of the group"}
+      - {label: "Venue", name: "venue", widget: "string", required: false, hint: "Event venue name"}
+      - {label: "Venue Url", name: "venueUrl", widget: "string", required: false, hint: "URL of the venue"}
+      - {label: "Location", name: "location", widget: "string", hint: "Location of the event"}
+      - {label: "Date and Time", name: "datetime", widget: "datetime", format: "MMMM Do YYYY hh:mm a", hint: "Date and time of the event"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "posts"
     label: "Blog Posts"
+    label_singular: "Post"
     folder: "posts"
     create: true
+    description: "Add post to your blog"
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Title", name: "title", widget: "string", hint: "Title of the blog post"}
+      - {label: "Image", name: "image", widget: "image", required: false, hint: "Heading image for the post"}
+      - {label: "Published", name: "published", widget: "datetime", format: "MMM Do YY", hint: "Date and time post was published. Leave blank for current time."}
+      - {label: "Description", name: "description", widget: "text", hint: "A short description for the post card displayed on the Blog page"}
       - {label: "Body", name: "body", widget: "markdown"}
